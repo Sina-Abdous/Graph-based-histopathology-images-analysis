@@ -23,11 +23,11 @@
 
 ## To-Do
 #### TokenGT on MUTAG dataset
-- [criterions]()
-- [data]()
-- [pre-train]()
-- [evaluate]()
-- [tasks]()
+- [tasks]() @Reza
+- [data]() @Reza
+- [pre-train]()@Abolfazl
+- [evaluate]()@Abolfazl
+- [criterions]() @Abolfazl
 
 ## Suggestions
 #### Interpretation
