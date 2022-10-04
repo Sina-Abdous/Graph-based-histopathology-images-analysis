@@ -1,3 +1,0 @@
-[submodule "tokengt/large-scale-regression/fairseq"]
-	path = tokengt/large-scale-regression/fairseq
-	url = https://github.com/pytorch/fairseq.git
