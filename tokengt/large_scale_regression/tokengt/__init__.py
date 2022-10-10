@@ -11,4 +11,5 @@ except:
         flush=True,
     )
 
-import tokengt.criterions
+# import tokengt.large_scale_regression.tokengt.criterions
+from . import criterions

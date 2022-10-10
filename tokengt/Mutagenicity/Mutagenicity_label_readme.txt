@@ -37,8 +37,3 @@ Class labels were converted to integer values using this map:
 	1	nonmutagen
 
 
-#############################
-Mutagenicity_edge_gt.txt
-0: 		Edges outside motifs.
-1: 		Edges inside motifs (NO2 and NH2)
-

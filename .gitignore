@@ -121,3 +121,16 @@ wandb/
 
 *.pyc
 *.log
+
+.ipynb_checkpoints
+
+MUTAG
+Mutagenicity
+tmp
+
+
+tokengt/large_scale_regression/scripts/dataset
+tokengt/large_scale_regression/scripts/checkpoints
+tokengt/large_scale_regression/scripts/chpts
+tokengt/large_scale_regression/scripts/Mutagenicity
+tokengt/large_scale_regression/scripts/MUTAG

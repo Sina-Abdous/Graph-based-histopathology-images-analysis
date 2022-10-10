@@ -4,6 +4,7 @@ Modified from https://github.com/microsoft/Graphormer
 
 from functools import lru_cache
 
+import os
 import numpy as np
 import torch
 from fairseq.data import data_utils, FairseqDataset, BaseWrapperDataset
@@ -15,6 +16,7 @@ from typing import Optional, Union
 from torch_geometric.data import Data as PYGDataset
 from dgl.data import DGLDataset
 from .ogb_datasets import OGBDatasetLookupTable
+from .pyg_datasets.pyg_dataset import TUDataset, TokenGTPYGDataset
 
 
 class BatchedDataDataset(FairseqDataset):
@@ -75,7 +77,15 @@ class TokenGTDataset:
         if dataset is not None:
             raise ValueError("customized dataset can only have source pyg or dgl")
         if dataset_source == "ogb":
-            self.dataset = OGBDatasetLookupTable.GetOGBDataset(dataset_spec, seed=seed)        
+            self.dataset = OGBDatasetLookupTable.GetOGBDataset(dataset_spec, seed=seed) 
+        if dataset_source == "pyg":
+            tu_dataset = TUDataset(
+                root=os.path.abspath(os.path.curdir),
+                name=dataset_spec,
+                use_node_attr=True,
+                use_edge_attr=True
+            )
+            self.dataset = TokenGTPYGDataset(tu_dataset)       
 
         self.setup()
         list_N = []
