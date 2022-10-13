@@ -219,17 +219,16 @@ class GraphFeatureTokenizer(nn.Module):
             edge_data,
             edge_num
         ) = (
-            batched_data["node_data"],
+            batched_data["node_data"].type(torch.long),
             batched_data["in_degree"],
             batched_data["out_degree"],
             batched_data["node_num"],
             batched_data["lap_eigvec"],
             batched_data["lap_eigval"],
             batched_data["edge_index"],
-            batched_data["edge_data"],
+            batched_data["edge_data"].type(torch.long),
             batched_data["edge_num"]
         )
-
         node_feature = self.atom_encoder(node_data).sum(-2)  # [sum(n_node), D]
         edge_feature = self.edge_encoder(edge_data).sum(-2)  # [sum(n_edge), D]
         device = node_feature.device

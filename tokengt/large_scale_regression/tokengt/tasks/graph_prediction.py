@@ -53,7 +53,7 @@ class GraphPredictionConfig(FairseqDataclass):
     )
 
     num_atoms: int = field(
-        default=512 * 9,
+        default=512 * 14,
         metadata={"help": "number of atom types in the graph"},
     )
 
