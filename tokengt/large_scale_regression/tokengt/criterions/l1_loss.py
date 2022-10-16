@@ -32,7 +32,7 @@ class GraphPredictionL1Loss(FairseqCriterion):
         logits = model(**sample["net_input"])
         targets = model.get_targets(sample, [logits])
 
-        loss = nn.L1Loss(reduction="sum")(logits, targets[: logits.size(0)])
+        loss = nn.CrossEntropyLoss(reduction="sum")(logits, targets[: logits.size(0)])
 
         logging_output = {
             "loss": loss.data,
