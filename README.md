@@ -40,5 +40,5 @@
 
 
 #### Drive Folders
-- pretrained-models interpret[https://drive.google.com/drive/folders/1i9JInpTua2lpa0wm_TcNctn2adpL7O9d?usp=sharing]
+- pretrained-models interpret(https://drive.google.com/drive/folders/1i9JInpTua2lpa0wm_TcNctn2adpL7O9d?usp=sharing)
 
