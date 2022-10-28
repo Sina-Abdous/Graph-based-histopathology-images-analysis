@@ -17,6 +17,7 @@ from torch_geometric.data import Data as PYGDataset
 from dgl.data import DGLDataset
 from .ogb_datasets import OGBDatasetLookupTable
 from .pyg_datasets.pyg_dataset import TUDataset, TokenGTPYGDataset
+from .dgl_datasets.bracs_dataset import TokenGTDGLLocalDataset
 
 
 class BatchedDataDataset(FairseqDataset):
@@ -85,7 +86,12 @@ class TokenGTDataset:
                 use_node_attr=True,
                 use_edge_attr=True
             )
-            self.dataset = TokenGTPYGDataset(tu_dataset)       
+            self.dataset = TokenGTPYGDataset(tu_dataset)
+        elif dataset_source == "dgl-local":
+            abs_path = dataset_spec
+            dgl_dataset = TokenGTDGLLocalDataset(abs_path)
+            self.dataset = TokenGTPYGDataset(dataset=dgl_dataset,  train_set=dgl_dataset.train_set, 
+                                            valid_set=dgl_dataset.valid_set, test_set=dgl_dataset.test_set)
 
         self.setup()
         list_N = []
