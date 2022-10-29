@@ -5,7 +5,6 @@
       - [Customize and test TokenGT](#Customize-and-test-TokenGT)
       - [Graph Generation of histopathology images](#Graph-Generation-of-histopathology-images)
   - [To-Do](#To-Do)
-      - [TokenGT on MUTAG dataset](#TokenGT-on-MUTAG-dataset)
   - [Suggestions](#Suggestions)
       - [Robustness](#Robustness)
       - [Interpretation](#Interpretation)
@@ -23,12 +22,9 @@
 
 
 ## To-Do
-#### TokenGT on MUTAG dataset
-- [tasks]() @Reza
-- [data]() @Reza
-- [pre-train]()@Abolfazl
-- [evaluate]()@Abolfazl
-- [criterions]() @Abolfazl
+- [run tokengt on BRACS]() @Reza
+- [visualize RVT attention map on BRACS]() @Abolfazl
+- [check RVT and its modules]()@Pourya
 
 ## Suggestions
 #### Robustness
