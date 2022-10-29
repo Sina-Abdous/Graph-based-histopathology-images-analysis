@@ -7,6 +7,7 @@
   - [To-Do](#To-Do)
       - [TokenGT on MUTAG dataset](#TokenGT-on-MUTAG-dataset)
   - [Suggestions](#Suggestions)
+      - [Robustness](#Robustness)
       - [Interpretation](#Interpretation)
       - [GNNs](#GNNs)
 
@@ -30,6 +31,9 @@
 - [criterions]() @Abolfazl
 
 ## Suggestions
+#### Robustness
+- [RVT](https://github.com/vtddggg/Robust-Vision-Transformer)
+- [Adversarial attacks and adversarial robustness in computational pathology](https://github.com/KatherLab/Pathology_Adversarial)
 #### Interpretation
 - [Transformers Interpret](https://github.com/cdpierse/transformers-interpret)
 - [IA-RED2](http://people.csail.mit.edu/bpan/ia-red/)
