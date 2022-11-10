@@ -20,6 +20,8 @@ def convert_to_single_emb(x, offset: int = 512):
 
 
 def preprocess_item(item):
+    if not item.edge_attr:
+        item.edge_attr = torch.stack([item.x.index_select(0, indices).mean(dim=0) for indices in item.edge_index.T])
 
     edge_int_feature, edge_index, node_int_feature = item.edge_attr, item.edge_index, item.x
     node_data = convert_to_single_emb(node_int_feature)

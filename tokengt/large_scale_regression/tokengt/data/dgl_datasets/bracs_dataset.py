@@ -30,7 +30,7 @@ class TokenGTDGLLocalDataset(DGLDataset):
                         g_pyg = pyg_from_networkx(g[0][0].to_networkx(node_attrs=["centroid", "feat"]))
                         g_pyg.y = torch.tensor([g[1]["label"].item()])
                         g_pyg.x = g_pyg.feat
-                        g_pyg.edge_attr = torch.stack([g_pyg.x.index_select(0, indices).mean(dim=0) for indices in g_pyg.edge_index.T])
+                        # g_pyg.edge_attr = torch.stack([g_pyg.x.index_select(0, indices).mean(dim=0) for indices in g_pyg.edge_index.T])
                         self.graphs.append(g_pyg)
                         sets[i].append(g_pyg)
                         idx += 1
