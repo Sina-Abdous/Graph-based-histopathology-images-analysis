@@ -5,6 +5,8 @@ Modified from https://github.com/microsoft/Graphormer
 import torch
 import numpy as np
 import pyximport
+from dgl.heterograph import DGLHeteroGraph
+from torch_geometric.utils import from_networkx as pyg_from_networkx
 
 from . import algos
 pyximport.install(setup_args={"include_dirs": np.get_include()})
@@ -20,6 +22,14 @@ def convert_to_single_emb(x, offset: int = 512):
 
 
 def preprocess_item(item):
+
+    if isinstance(item, DGLHeteroGraph):
+        g_pyg = pyg_from_networkx(item.to_networkx(node_attrs=["feat"]))
+        g_pyg.y = torch.tensor([item.y.item()])
+        g_pyg.x = g_pyg.feat
+        g_pyg.idx = item.idx
+        item = g_pyg
+
     if not item.edge_attr:
         item.edge_attr = torch.stack([item.x.index_select(0, indices).mean(dim=0) for indices in item.edge_index.T])
 

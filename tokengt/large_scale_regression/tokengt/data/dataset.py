@@ -24,7 +24,7 @@ class BatchedDataDataset(FairseqDataset):
     def __init__(
             self,
             dataset,
-            max_node=128,
+            max_node=1024,
             multi_hop_max_dist=5,
             spatial_pos_max=1024
     ):
@@ -35,7 +35,8 @@ class BatchedDataDataset(FairseqDataset):
     @lru_cache(maxsize=16)
     def __getitem__(self, index):
         item = self.dataset[int(index)]
-        return preprocess_item(item)
+        # return preprocess_item(item)
+        return item
 
     def __len__(self):
         return len(self.dataset)
@@ -96,9 +97,11 @@ class TokenGTDataset:
         self.setup()
         list_N = []
         for i in range(len(self.dataset_val)):
-            list_N.append(self.dataset_val[i].x.shape[0])
+            # list_N.append(self.dataset_val[i].x.shape[0])
+            list_N.append(self.dataset_val[i].num_nodes())
         for i in range(len(self.dataset_test)):
-            list_N.append(self.dataset_test[i].x.shape[0])
+            # list_N.append(self.dataset_test[i].x.shape[0])
+            list_N.append(self.dataset_test[i].num_nodes())
         list_N = torch.tensor(list_N)
         torch.save(list_N, "val_test_list_N.pt")
 

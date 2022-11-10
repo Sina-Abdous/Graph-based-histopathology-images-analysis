@@ -43,7 +43,7 @@ class GraphPredictionConfig(FairseqDataclass):
     )
 
     max_nodes: int = field(
-        default=128,
+        default=512,
         metadata={"help": "max nodes per graph"},
     )
 
@@ -53,12 +53,12 @@ class GraphPredictionConfig(FairseqDataclass):
     )
 
     num_atoms: int = field(
-        default=512 * 14,
+        default=1024 * 512,
         metadata={"help": "number of atom types in the graph"},
     )
 
     num_edges: int = field(
-        default=512 * 3,
+        default=1024 * 512,
         metadata={"help": "number of edge types in the graph"},
     )
 

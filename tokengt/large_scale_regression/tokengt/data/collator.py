@@ -4,6 +4,7 @@ Modified from https://github.com/microsoft/Graphormer
 
 import torch
 import torch.nn.functional as F
+from .wrapper import preprocess_item
 
 
 def pad_1d_unsqueeze(x, padlen):
@@ -68,14 +69,15 @@ def pad_3d_unsqueeze(x, padlen1, padlen2, padlen3):
 @torch.no_grad()
 def collator(
         items,
-        max_node=512,
+        max_node=1024,
         max_edge=2048,
         multi_hop_max_dist=20,
         spatial_pos_max=20
 ):
+    items = [preprocess_item(item) for item in items]
     items = [item for item in items if
              item is not None and item.x.size(0) <= max_node and item.edge_attr.size(0) <= max_edge]
-
+    
     (
         idxs,
         edge_index,
