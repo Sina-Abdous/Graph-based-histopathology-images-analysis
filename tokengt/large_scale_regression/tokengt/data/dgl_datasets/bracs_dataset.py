@@ -5,6 +5,7 @@ import traceback
 from torch_geometric.utils import from_networkx as pyg_from_networkx
 from dgl.data import DGLDataset
 from dgl.data.utils import load_graphs
+import gc
 
 
 class TokenGTDGLLocalDataset(DGLDataset):
@@ -33,6 +34,8 @@ class TokenGTDGLLocalDataset(DGLDataset):
                         self.graphs.append(g_pyg)
                         sets[i].append(g_pyg)
                         idx += 1
+                        del g
+                        gc.collect()
                     except Exception as e:
                         pass
                         # traceback.print_exc()
