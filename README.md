@@ -5,8 +5,8 @@
       - [Customize and test TokenGT](#Customize-and-test-TokenGT)
       - [Graph Generation of histopathology images](#Graph-Generation-of-histopathology-images)
   - [To-Do](#To-Do)
-      - [TokenGT on MUTAG dataset](#TokenGT-on-MUTAG-dataset)
   - [Suggestions](#Suggestions)
+      - [Robustness](#Robustness)
       - [Interpretation](#Interpretation)
       - [GNNs](#GNNs)
 
@@ -22,14 +22,14 @@
 
 
 ## To-Do
-#### TokenGT on MUTAG dataset
-- [tasks]() @Reza
-- [data]() @Reza
-- [pre-train]()@Abolfazl
-- [evaluate]()@Abolfazl
-- [criterions]() @Abolfazl
+- [run tokengt on BRACS]() @Reza
+- [visualize RVT attention map on BRACS]() @Abolfazl
+- [check RVT and its modules]()@Pourya
 
 ## Suggestions
+#### Robustness
+- [RVT](https://github.com/vtddggg/Robust-Vision-Transformer)
+- [Adversarial attacks and adversarial robustness in computational pathology](https://github.com/KatherLab/Pathology_Adversarial)
 #### Interpretation
 - [Transformers Interpret](https://github.com/cdpierse/transformers-interpret)
 - [IA-RED2](http://people.csail.mit.edu/bpan/ia-red/)
