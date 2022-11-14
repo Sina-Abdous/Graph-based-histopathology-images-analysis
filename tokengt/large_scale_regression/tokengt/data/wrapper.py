@@ -31,7 +31,7 @@ def preprocess_item(item):
         item = g_pyg
 
     if not item.edge_attr:
-        item.edge_attr = torch.stack([item.x.index_select(0, indices).mean(dim=0) for indices in item.edge_index.T])
+        item.edge_attr = torch.stack([item.x.index_select(0, indices).mean() for indices in item.edge_index.T])
 
     edge_int_feature, edge_index, node_int_feature = item.edge_attr, item.edge_index, item.x
     node_data = convert_to_single_emb(node_int_feature)

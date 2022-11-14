@@ -74,7 +74,7 @@ def collator(
         multi_hop_max_dist=20,
         spatial_pos_max=20
 ):
-    items = [preprocess_item(item) for item in items]
+    # items = [preprocess_item(item) for item in items]
     items = [item for item in items if
              item is not None and item.x.size(0) <= max_node and item.edge_attr.size(0) <= max_edge]
     

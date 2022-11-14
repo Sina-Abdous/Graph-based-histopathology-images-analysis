@@ -136,3 +136,7 @@ tokengt/large_scale_regression/scripts/Mutagenicity
 tokengt/large_scale_regression/scripts/MUTAG
 tokengt/MUTAG
 tokengt/Mutagenicity
+
+tokengt/large_scale_regression/scripts/val_test_list_N.pt
+tokengt/large_scale_regression/scripts/checkpoints
+tokengt/large_scale_regression/scripts/ckpts

@@ -35,8 +35,8 @@ class BatchedDataDataset(FairseqDataset):
     @lru_cache(maxsize=16)
     def __getitem__(self, index):
         item = self.dataset[int(index)]
-        # return preprocess_item(item)
-        return item
+        return preprocess_item(item)
+        # return item
 
     def __len__(self):
         return len(self.dataset)

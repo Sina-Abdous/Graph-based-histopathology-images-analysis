@@ -19,6 +19,7 @@ class TokenGTDGLLocalDataset(DGLDataset):
         dirs = ["train", "test", "val"]
         sets =  []
         idx = 0
+        print("Loading dataset ...")
         for i, dir in enumerate(dirs):
             sets.append([])
             path = os.path.join(self.root_path, dir)
@@ -47,6 +48,7 @@ class TokenGTDGLLocalDataset(DGLDataset):
                         # traceback.print_exc()
 
         self.train_set, self.valid_set, self.test_set = sets
+        print("Done Loading dataset.")
 
     def __getitem__(self, i):
         return self.graphs[i]

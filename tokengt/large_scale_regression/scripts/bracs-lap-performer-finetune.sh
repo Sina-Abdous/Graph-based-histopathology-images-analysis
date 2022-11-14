@@ -8,8 +8,7 @@ fairseq-train \
 --user-dir ../tokengt \
 --num-workers 16 \
 --ddp-backend=legacy_ddp \
---dataset-name /home/re/Documents/Dr.RohbanLab/cell_graphs/ \  
---dataset-source dgl-local \
+--dataset-name /home/re/Documents/Dr.RohbanLab/cell_graphs --dataset-source dgl-local \
 --task graph_prediction \
 --criterion l1_loss \
 --arch tokengt_base \
@@ -29,4 +28,4 @@ fairseq-train \
 --data-buffer-size 20 \
 --save-dir ./ckpts/bracs-tokengt-lap16-performer-finetune \
 --tensorboard-logdir ./tb/bracs-tokengt-lap16-performer-finetune \
---no-epoch-checkpoints
+--no-epoch-checkpoints --cpu

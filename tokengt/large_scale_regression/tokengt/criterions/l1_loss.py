@@ -29,8 +29,8 @@ class GraphPredictionL1Loss(FairseqCriterion):
         with torch.no_grad():
             natoms = max(sample["net_input"]["batched_data"]["node_num"])
 
-        logits = model(**sample["net_input"])
-        targets = model.get_targets(sample, [logits])
+        logits = model(**sample["net_input"]).float()
+        targets = model.get_targets(sample, [logits]).float()
 
         loss = nn.CrossEntropyLoss(reduction="sum")(logits, targets[: logits.size(0)])
 
