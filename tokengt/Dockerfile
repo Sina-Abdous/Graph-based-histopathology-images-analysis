@@ -1,4 +1,4 @@
-FROM nvidia/cuda:11.1.1-cudnn8-devel-ubuntu18.04
+FROM nvidia/cuda:11.4.0-runtime-ubuntu20.04
 ENV DEBIAN_FRONTEND=noninteractive
 RUN apt-get update && apt-get install git sudo -y
 
@@ -17,7 +17,7 @@ RUN update-alternatives --install /usr/bin/python python /usr/bin/python3.9 1
 RUN python -m pip install --upgrade wheel setuptools pip distlib
 
 RUN mkdir -p /tokengt
-RUN git clone --recursive https://github.com/jw9730/tokengt.git /tokengt
+RUN git clone --recursive git@github.com:Sina-Abdous/Graph-based-histopathology-images-analysis.git /tokengt
 RUN git config --global --add safe.directory /tokengt
 RUN git config --global --add safe.directory /tokengt/large-scale-regression/fairseq
 WORKDIR /tokengt
