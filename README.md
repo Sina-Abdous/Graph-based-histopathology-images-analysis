@@ -34,6 +34,7 @@
 - [Transformers Interpret](https://github.com/cdpierse/transformers-interpret)
 - [IA-RED2](http://people.csail.mit.edu/bpan/ia-red/)
 - [ViT-NeT](https://github.com/jumpsnack/ViT-NeT)
+- [FEM](https://github.com/labribkb/fem/blob/main/FEM.ipynb)
 
 #### GNNs
 - [Graph Transformer Networks](https://github.com/seongjunyun/Graph_Transformer_Networks)
